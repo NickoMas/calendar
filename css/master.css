@@ -1,0 +1,12 @@
+table * {
+    padding: 10px;
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+	font-size: 60px; 
+}
