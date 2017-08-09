@@ -34,16 +34,28 @@ export const makeCalendar = function (date) {
 }
 
 /**
+ * checks day to be correspondent day of the week (tableRow)
  * 
- *
+ * @function
+ * @param {number} tablerow - value of row as a week
+ * @param {number} day - value of day
+ * @return {boolean}
  *
 */
 
-export const weekOfMonth = function (date) {
-	let dateCurrent = new Date(date);
-	
-	const firstDay = new Date(dateCurrent.setDate(1)).getDay();
+export const weekOfMonth = function (tableRow, day) {
 
-	return Math.ceil((date.getDate() + firstDay)/7);
-};
+  //date ranges possible within defined week
+  let limits = [
+    [0, 7],
+    [1, 14],
+    [8, 21],
+    [15, 28],
+    [22, 31],
+    [29, 31]
+  ];
 
+  return day >= limits[tableRow][0] && 
+    day <= limits[tableRow][1] ? true : false;
+
+}

@@ -51,12 +51,22 @@ class Navigation extends React.Component {
 
 	const time = this.props.time;
 	const monthName = time.toLocaleString("en-us", { month: "long" });
+	const divStyles = {
+		display: 'flex',
+		flexFlow: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-around',
+		width: '200px',
+		margin: '0 auto'
+	}
 
     return(
         <nav>
-	        <a href="#" onClick = { this.props.monthDown } className="previous round">&#8249;</a>
-	        <span />{ `${monthName}, ${time.getFullYear()}` }
-	        <a href="#" onClick = { this.props.monthUp } className="next round">&#8250;</a>
+        	<div style={divStyles}>
+		        <a href="#" onClick = { this.props.monthDown } className="previous round">&#8249;</a>
+		        <span>{ `${monthName}, ${time.getFullYear()}` }</span>
+		        <a href="#" onClick = { this.props.monthUp } className="next round">&#8250;</a>
+		    </div>
         </nav>
         )
     }

@@ -116,12 +116,8 @@ class TableCell extends React.Component {
     const td = this.props.tdIndex;
     const day = this.props.calendar[tr][td];
 
-    console.log(weekOfMonth(this.props.time), this.props.time);
-
-    //weekOfMonth(this.props.time) === tr ? 'inRange' : 'offRange';
-
     return (
-      <td className='e'>{ day }</td>
+      <td className={weekOfMonth(tr, day) ? 'inRange' : 'offRange'}>{ day }</td>
       )
 
   }
@@ -135,4 +131,3 @@ ReactDOM.render(<Provider store = {store}>
                   <Window />
                 </Provider>, 
                 document.getElementById("root"));
-
