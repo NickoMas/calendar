@@ -15,7 +15,7 @@ export const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     monthUp: () => dispatch({type: 'up'})
-  , monthDown: () => dispatch({type: 'down'}) 
+  , monthDown: () => dispatch({type: 'down'})
   }
 }
 ///
@@ -39,6 +39,7 @@ class Navigation extends React.Component {
 
   send(){
 
+	  //retieve data from backend
 	let t = fetch("http://128.199.53.150/events", { method: "get" })
 		.then(a => a.json())
 		.then(a => console.log(a));
